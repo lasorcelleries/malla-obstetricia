@@ -1,43 +1,46 @@
-const estados = {};
+const estados = {}; // Guarda qué ramos están aprobados
 
 function renderMalla() {
   const container = document.getElementById("malla-container");
   container.innerHTML = "";
 
   malla.forEach(semestre => {
-    const semDiv = document.createElement("div");
-    semDiv.className = "semestre";
+    const semestreDiv = document.createElement("div");
+    semestreDiv.className = "semestre";
+
     const titulo = document.createElement("h3");
     titulo.textContent = semestre.semestre;
-    semDiv.appendChild(titulo);
+    semestreDiv.appendChild(titulo);
 
     semestre.ramos.forEach(ramo => {
-      const div = document.createElement("div");
-      div.className = "ramo";
-      div.textContent = ramo.nombre;
-      div.dataset.id = ramo.id;
+      const ramoDiv = document.createElement("div");
+      ramoDiv.className = "ramo";
+      ramoDiv.textContent = ramo.nombre;
+      ramoDiv.dataset.id = ramo.id;
 
-      if (!ramo.requisitos.every(r => estados[r])) {
-        div.classList.add("bloqueado");
+      // El ramo se desbloquea solo si TODOS sus requisitos están aprobados
+      const requisitosCumplidos = ramo.requisitos.every(req => estados[req] === true);
+
+      if (!requisitosCumplidos) {
+        ramoDiv.classList.add("bloqueado");
       }
 
       if (estados[ramo.id]) {
-        div.classList.add("aprobado");
+        ramoDiv.classList.add("aprobado");
       }
 
-      div.onclick = () => aprobarRamo(ramo);
-      semDiv.appendChild(div);
+      ramoDiv.onclick = () => {
+        if (!requisitosCumplidos) return; // No hace nada si está bloqueado
+        estados[ramo.id] = !estados[ramo.id]; // Alterna aprobado/no aprobado
+        renderMalla();
+      };
+
+      semestreDiv.appendChild(ramoDiv);
     });
 
-    container.appendChild(semDiv);
+    container.appendChild(semestreDiv);
   });
 }
 
-function aprobarRamo(ramo) {
-  if (!ramo.requisitos.every(r => estados[r])) return;
-
-  estados[ramo.id] = !estados[ramo.id]; // toggle estado
-  renderMalla();
-}
-
+// Inicializa el renderizado
 renderMalla();
