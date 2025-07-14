@@ -2,14 +2,26 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Malla Obstetricia UNAB</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Malla interactiva para la carrera de Obstetricia en la Universidad Andrés Bello" />
+  <title>Malla Interactiva - Obstetricia UNAB</title>
   <link rel="stylesheet" href="estilos.css" />
+  <!-- Puedes agregar aquí favicon o fuentes -->
 </head>
 <body>
-  <h1>Malla Interactiva - Obstetricia UNAB</h1>
-  <p class="instrucciones">Haz clic sobre los ramos para marcarlos como aprobados. Al aprobar un ramo, se desbloquearán automáticamente los ramos que dependan de él.</p>
-  <div id="malla-container"></div>
+  <header>
+    <h1>Malla Interactiva - Obstetricia UNAB</h1>
+    <p class="instrucciones">Haz clic sobre los ramos para marcarlos como aprobados. Al aprobar un ramo, se desbloquearán automáticamente los ramos que dependan de él.</p>
+  </header>
+
+  <main>
+    <section id="malla-container" aria-label="Malla curricular de Obstetricia UNAB"></section>
+  </main>
+
+  <footer>
+    <p style="text-align:center; color:#7b1fa2; margin-top: 30px;">© 2025 Universidad Andrés Bello</p>
+  </footer>
 
   <script src="data.js"></script>
   <script src="script.js"></script>
