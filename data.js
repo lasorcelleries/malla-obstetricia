@@ -34,7 +34,7 @@ const malla = [
     ramos: [
       { nombre: "Matronería y Bases Fisiopatológicas de la Salud", id: "matroneria_fisio", requisitos: ["bpg"], abre: ["sssr2", "legal"] },
       { nombre: "Salud Sexual, Salud Reproductiva y Gestión I", id: "sssr1", requisitos: ["cmq2", "politicas"], abre: ["sssr2", "educacion", "sfyc"] },
-      { nombre: "Administración y Gestión en Salud", id: "admin", requisitos: ["salud_pub"], abre: [] },
+      { nombre: "Administración y Gestión en Salud", id: "admin", requisitos: ["salud_pub"], abre: ["neo", "bioest"] },
       { nombre: "Integrador I: Cuidados Médico-Quirúrgicos", id: "integ1", requisitos: ["cmq2", "bpg", "politicas"], abre: [] },
       { nombre: "Inglés IV", id: "ingles4", requisitos: ["ingles3"], abre: [] }
     ]
@@ -44,8 +44,8 @@ const malla = [
     ramos: [
       { nombre: "Salud Sexual, Salud Reproductiva y Gestión II", id: "sssr2", requisitos: ["sssr1", "matroneria_fisio"], abre: ["sexologia", "matro_path"] },
       { nombre: "Farmacología General y Aplicada", id: "farmacologia", requisitos: ["qgo", "biocel"], abre: ["matro_path"] },
-      { nombre: "Neonatología, Lactancia y Gestión", id: "neo", requisitos: ["bpg", "salud_pub"], abre: ["educacion", "sfyc", "matro_path"] },
-      { nombre: "Psicología Integral", id: "psico", requisitos: ["politicas"], abre: ["intervencion"] }
+      { nombre: "Neonatología, Lactancia y Gestión", id: "neo", requisitos: ["bpg", "salud_pub", "admin"], abre: ["educacion", "sfyc", "matro_path"] },
+      { nombre: "Psicología Integral y Técnicas de Entrevista Clínica", id: "psico", requisitos: ["politicas"], abre: ["intervencion"] }
     ]
   },
   {
@@ -53,8 +53,8 @@ const malla = [
     ramos: [
       { nombre: "Educación con Enfoque Curso de Vida", id: "educacion", requisitos: ["sssr1", "neo", "politicas"], abre: ["imagenologia", "integ2", "onco"] },
       { nombre: "Salud Familiar y Comunitaria", id: "sfyc", requisitos: ["sssr1", "neo", "politicas"], abre: ["intervencion"] },
-      { nombre: "Bioestadística", id: "bioest", requisitos: ["salud_pub"], abre: ["metodologia"] },
-      { nombre: "Matronería Patológica Integrada", id: "matro_path", requisitos: ["sssr2", "farmacologia", "neo"], abre: ["imagenologia", "integ2", "onco"] }
+      { nombre: "Bioestadística", id: "bioest", requisitos: ["salud_pub", "admin"], abre: ["metodologia"] },
+      { nombre: "Matronería Patológica Integrada y Gestión", id: "matro_path", requisitos: ["sssr2", "farmacologia", "neo"], abre: ["imagenologia", "integ2", "onco"] }
     ]
   },
   {
@@ -62,7 +62,7 @@ const malla = [
     ramos: [
       { nombre: "Sexología, Género y Derecho", id: "sexologia", requisitos: ["sssr2"], abre: ["imagenologia", "integ2", "onco"] },
       { nombre: "Matronería Legal y Bioética", id: "legal", requisitos: ["matroneria_fisio", "politicas"], abre: ["imagenologia", "integ2", "onco"] },
-      { nombre: "Intervención en Contextos Sociales", id: "intervencion", requisitos: ["psico", "sfyc"], abre: ["imagenologia", "integ2", "onco"] },
+      { nombre: "Intervención en Contextos Sociales y Comunitarios", id: "intervencion", requisitos: ["psico", "sfyc"], abre: ["imagenologia", "integ2", "onco"] },
       { nombre: "Metodología de la Investigación", id: "metodologia", requisitos: ["bioest", "politicas"], abre: ["imagenologia", "integ2", "onco", "proyecto"] }
     ]
   },
@@ -70,7 +70,7 @@ const malla = [
     semestre: "8° Semestre",
     ramos: [
       { nombre: "Imagenología en Matronería", id: "imagenologia", requisitos: ["educacion", "matro_path", "sexologia", "legal", "intervencion", "metodologia"], abre: ["habilitacion1", "habilitacion2"] },
-      { nombre: "Integrador II: Práctica en la Comunidad", id: "integ2", requisitos: ["educacion", "matro_path", "sexologia", "legal", "intervencion", "metodologia"], abre: ["habilitacion1", "habilitacion2"] },
+      { nombre: "Integrador II: Práctica de Matronería en la Comunidad", id: "integ2", requisitos: ["educacion", "matro_path", "sexologia", "legal", "intervencion", "metodologia"], abre: ["habilitacion1", "habilitacion2"] },
       { nombre: "Matronería Oncológica y Reproducción Asistida", id: "onco", requisitos: ["educacion", "matro_path", "sexologia", "legal", "intervencion", "metodologia"], abre: ["habilitacion1", "habilitacion2"] },
       { nombre: "Proyecto de Matronería", id: "proyecto", requisitos: ["metodologia"], abre: ["habilitacion1", "habilitacion2"] }
     ]
