@@ -6,7 +6,7 @@ const malla = [
       { nombre: "Biología Celular", id: "biocel", requisitos: [], abre: ["farmacologia", "micro"] },
       { nombre: "Introducción a la Matronería", id: "intro_mat", requisitos: [], abre: ["cmq1"] },
       { nombre: "Inglés I", id: "ingles1", requisitos: [], abre: ["ingles2"] },
-      { nombre: "Habilidades Comunicativas", id: "habilidades", requisitos: [], abre: [] }
+      { nombre: "Habilidades Comunicativas", id: "habilidades", requisitos: [] }
     ]
   },
   {
@@ -25,7 +25,7 @@ const malla = [
       { nombre: "Cuidados Médico-Quirúrgicos de Matronería II", id: "cmq2", requisitos: ["cmq1", "micro", "morfo"], abre: ["sssr1", "integ1"] },
       { nombre: "Bases Perinatales y Ginecológicas", id: "bpg", requisitos: ["micro", "morfo"], abre: ["matroneria_fisio", "integ1", "neo"] },
       { nombre: "Políticas en Salud Sexual y Reproductiva", id: "politicas", requisitos: ["salud_pub"], abre: ["sssr1", "educacion", "sfyc", "legal", "metodologia", "psico", "integ1"] },
-      { nombre: "Pensamiento Crítico", id: "pc", requisitos: [], abre: [] },
+      { nombre: "Pensamiento Crítico", id: "pc", requisitos: [] },
       { nombre: "Inglés III", id: "ingles3", requisitos: ["ingles2"], abre: ["ingles4"] }
     ]
   },
